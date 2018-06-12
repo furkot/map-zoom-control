@@ -1,6 +1,6 @@
 {
   "name": "map-zoom-control",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Zoom control that can be used with vector map renderer.",
   "author": {
     "name": "Damian Krzeminski",
