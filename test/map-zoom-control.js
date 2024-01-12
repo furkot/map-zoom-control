@@ -1,9 +1,9 @@
-var { describe, it, beforeEach } = require('node:test');
-var should = require('should');
-var zc = require('../');
+const { describe, it, beforeEach } = require('node:test');
+const should = require('should');
+const zc = require('../');
 
 function dummyMap(document, _zoom) {
-  var zoom = _zoom;
+  let zoom = _zoom;
 
   function getContainer() {
     return document.querySelector('#map-container');
@@ -22,10 +22,10 @@ function dummyMap(document, _zoom) {
   }
 
   return {
-    zoomIn: zoomIn,
-    zoomOut: zoomOut,
-    getZoom: getZoom,
-    getContainer: getContainer
+    zoomIn,
+    zoomOut,
+    getZoom,
+    getContainer
   };
 }
 
@@ -36,13 +36,13 @@ describe('map-zoom-control', function () {
   });
 
   it('must add and remove zoom', function () {
-    var zoom = zc();
-    var el = zoom.onAdd(this.map);
+    const zoom = zc();
+    const el = zoom.onAdd(this.map);
 
     should.exist(el, 'Container should be created');
     el.className.should.be.eql('mapboxgl-ctrl mapboxgl-ctrl-group');
 
-    var bzi = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in');
+    const bzi = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in');
     should.exist(bzi, 'Zoom In button should be created');
 
     bzi.click();
@@ -51,7 +51,7 @@ describe('map-zoom-control', function () {
     bzi.click();
     this.map.getZoom().should.eql(9);
 
-    var bzo = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out');
+    const bzo = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out');
     should.exist(bzo, 'Zoom Out button should be created');
 
     bzo.click();
