@@ -1,7 +1,6 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
-[![Dev Dependency Status][deps-dev-image]][deps-dev-url]
 
 # map-zoom-control
 
@@ -26,16 +25,14 @@ map.addControl(zoom);
 
 MIT © [Damian Krzeminski](https://pirxpilot.me)
 
-[npm-image]: https://img.shields.io/npm/v/map-zoom-control.svg
+[npm-image]: https://img.shields.io/npm/v/map-zoom-control
 [npm-url]: https://npmjs.org/package/map-zoom-control
 
-[travis-url]: https://travis-ci.com/furkot/map-zoom-control
-[travis-image]: https://img.shields.io/travis/com/furkot/map-zoom-control.svg
+[build-url]: https://github.com/furkot/map-zoom-control/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/actions/workflow/status/furkot/map-zoom-control/check.yaml?branch=main
 
-[deps-image]: https://img.shields.io/david/furkot/map-zoom-control.svg
-[deps-url]: https://david-dm.org/furkot/map-zoom-control
+[deps-image]: https://img.shields.io/librariesio/release/npm/map-zoom-control
+[deps-url]: https://libraries.io/npm/map-zoom-control
 
-[deps-dev-image]: https://img.shields.io/david/dev/furkot/map-zoom-control.svg
-[deps-dev-url]: https://david-dm.org/furkot/map-zoom-control?type=dev
 
 [mapbox-gl-js]: https://github.com/mapbox/mapbox-gl-js
