@@ -1,3 +1,4 @@
+var { describe, it, beforeEach } = require('node:test');
 var should = require('should');
 var zc = require('../');
 
