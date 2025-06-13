@@ -15,9 +15,9 @@ $ npm install --save map-zoom-control
 ## Usage
 
 ```js
-var zoomControl = require('map-zoom-control');
+import zoomControl from 'map-zoom-control';
 
-var zoom = zoomControl({});
+const zoom = zoomControl({});
 map.addControl(zoom);
 ```
 

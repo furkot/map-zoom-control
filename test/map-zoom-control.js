@@ -1,5 +1,5 @@
-const test = require('node:test');
-const zc = require('../');
+import test from 'node:test';
+import zc from '../lib/map-zoom-control.js';
 
 function dummyMap(document, _zoom) {
   let zoom = _zoom;

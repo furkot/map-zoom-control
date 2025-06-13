@@ -7,7 +7,12 @@
     "email": "pirxpilot@furkot.com",
     "url": "https://pirxpilot.me"
   },
-  "repository": "furkot/map-zoom-control",
+  "type": "module",
+  "exports": "./lib/map-zoom-control.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkot/map-zoom-control.git"
+  },
   "license": "MIT",
   "keywords": [
     "map-zoom-control",
