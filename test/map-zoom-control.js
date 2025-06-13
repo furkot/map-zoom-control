@@ -1,6 +1,5 @@
-const { describe, it, beforeEach } = require('node:test');
-const should = require('should');
-const zc = require('../');
+import test from 'node:test';
+import zc from '../lib/map-zoom-control.js';
 
 function dummyMap(document, _zoom) {
   let zoom = _zoom;
@@ -29,39 +28,41 @@ function dummyMap(document, _zoom) {
   };
 }
 
-describe('map-zoom-control', function () {
-  beforeEach(function () {
+test('map-zoom-control', async t => {
+  let map;
+
+  t.beforeEach(() => {
     document.body.innerHTML = '<div id="map-container"></div>';
-    this.map = dummyMap(document, 7);
+    map = dummyMap(document, 7);
   });
 
-  it('must add and remove zoom', function () {
+  await t.test('must add and remove zoom', t => {
     const zoom = zc();
-    const el = zoom.onAdd(this.map);
+    const el = zoom.onAdd(map);
 
-    should.exist(el, 'Container should be created');
-    el.className.should.be.eql('mapboxgl-ctrl mapboxgl-ctrl-group');
+    t.assert.ok(el, 'Container should be created');
+    t.assert.equal(el.className, 'mapboxgl-ctrl mapboxgl-ctrl-group');
 
     const bzi = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in');
-    should.exist(bzi, 'Zoom In button should be created');
+    t.assert.ok(bzi, 'Zoom In button should be created');
 
     bzi.click();
-    this.map.getZoom().should.eql(8);
+    t.assert.equal(map.getZoom(), 8);
 
     bzi.click();
-    this.map.getZoom().should.eql(9);
+    t.assert.equal(map.getZoom(), 9);
 
     const bzo = el.querySelector('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out');
-    should.exist(bzo, 'Zoom Out button should be created');
+    t.assert.ok(bzo, 'Zoom Out button should be created');
 
     bzo.click();
-    this.map.getZoom().should.eql(8);
+    t.assert.equal(map.getZoom(), 8);
 
     bzo.click();
-    this.map.getZoom().should.eql(7);
+    t.assert.equal(map.getZoom(), 7);
 
     zoom.onRemove();
 
-    should.not.exist(document.querySelector('mapboxgl-ctrl'));
+    t.assert.ok(!document.querySelector('mapboxgl-ctrl'));
   });
 });
