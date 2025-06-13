@@ -6,7 +6,7 @@ lint:
 format:
 	./node_modules/.bin/biome check --fix
 
-TEST_OPTS += --require jsdom-global/register --require should
+TEST_OPTS += --require jsdom-global/register
 test:
 	node --test $(TEST_OPTS)
 

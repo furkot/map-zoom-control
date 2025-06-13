@@ -18,9 +18,8 @@
   "dependencies": {},
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "jsdom": "~23",
-    "jsdom-global": "^3.0.2",
-    "should": "~13"
+    "jsdom": "~26",
+    "jsdom-global": "~3"
   },
   "scripts": {
     "test": "make check"
